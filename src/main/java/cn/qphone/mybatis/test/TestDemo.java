@@ -15,22 +15,25 @@ public class TestDemo {
         ApplicationContext context = new ClassPathXmlApplicationContext("classpath:applicationContext-*.xml");
 
         EmpServlet empServlet = context.getBean(EmpServlet.class);
-        List<Emp> empList = empServlet.findEmpList();
-        System.out.println(empList);
+//        List<Emp> empList = empServlet.findEmpList();
+//        System.out.println(empList);
 
         //2.测试通过id查询
-        Emp emp = empServlet.get(1207);
-        System.out.println(emp);
+//        Emp emp = empServlet.get(1207);
+//        System.out.println(emp);
 
         //3. 修改
 //        emp.setName("old lee head");
 //        empServlet.update(emp);
 
-        //4. 插入
+//        4. 插入
 //        Emp newEmp = new Emp(1212, "程志远", "boss", 1000000.0, "qphone");
 //        empServlet.insert(newEmp);
 
         //5. 删除
 //        empServlet.delete(1212);
+
+        //6. 转帐
+        empServlet.trans();
     }
 }

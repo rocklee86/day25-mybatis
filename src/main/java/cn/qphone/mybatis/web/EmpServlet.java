@@ -30,4 +30,10 @@ public class EmpServlet {
     public void delete(Integer id) {
         empService.delete(id);
     }
+
+    public void trans() {
+        Emp chen = get(1210);
+        Emp lee = get(1211);
+        empService.trans(chen, lee, 1000000.0);
+    }
 }

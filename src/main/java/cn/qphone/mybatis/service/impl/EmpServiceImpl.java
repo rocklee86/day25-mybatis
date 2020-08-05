@@ -32,4 +32,15 @@ public class EmpServiceImpl implements EmpService {
     public void delete(Integer id) {
         empMapper.delete(id);
     }
+
+    public void trans(Emp chen, Emp lee, double v) {
+        //开启事务
+        chen.setSalary(chen.getSalary() - v);
+        lee.setSalary(lee.getSalary() + v);
+        empMapper.update(chen);
+        System.out.println(1/0);
+        empMapper.update(lee);
+        //没有异常，提交
+        //catch()---> 回滚
+    }
 }
